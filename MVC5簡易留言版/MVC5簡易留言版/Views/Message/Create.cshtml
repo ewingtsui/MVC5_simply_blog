@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MVC5簡易留言版.Models.Article>
+@{
+    ViewBag.Title = "新增留言";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Message"))
+{
+    <div>
+        @Html.Label("標題")
+        @Html.TextBox("article_title")
+        @*"article_title"必須和 MessageControler中的[HttpPost]Create方法的參數"article_title"一致*@
+        <br />
+        @Html.Label("內容")
+        @Html.TextArea("content")
+        @*"content"必須和 MessageControler中的[HttpPost]Create方法的參數"content"一致*@
+        <br />
+        <input type="submit" value="送出留言" />
+    </div>
+}
+
